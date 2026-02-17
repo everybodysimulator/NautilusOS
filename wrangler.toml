@@ -1,9 +1,2 @@
 name = "nautilusosbrowser"
-type = "javascript" # since you are deploying static assets with a worker
 compatibility_date = "2026-02-17"
-
-# This tells Wrangler to serve your static files
-# from the current directory
-[site]
-bucket = "."
-entry-point = "."
