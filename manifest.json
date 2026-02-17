@@ -1,7 +1,7 @@
 {
   "id": "/?home=true",
-  "name": "pwaexample",
-  "short_name": "pwaexample",
+  "name": "nautilusosbrowser",
+  "short_name": "nautilusosbrowser",
   "start_url": "/?home=true",
   "theme_color": "#fff",
   "background_color": "#333",
