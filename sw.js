@@ -1,20 +1,17 @@
+// Service Worker: minimal PWA installable setup
+
+// Listen for the install event
 self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open("v1").then(cache => {
-      return cache.addAll([
-        "/",
-        "/index.html",
-        "/style.css",
-        "/script.js"
-      ]);
-    })
-  );
+  // Skip waiting so the SW activates immediately
+  self.skipWaiting();
 });
 
+// Optional: handle fetch events for basic offline fallback
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    fetch(event.request).catch(() => {
+      // If offline, serve the homepage
+      return caches.match("./") || fetch("./");
     })
   );
 });
