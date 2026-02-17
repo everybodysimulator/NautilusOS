@@ -1,7 +1,7 @@
 {
   "id": "/?home=true",
-  "name": "PWA Example",
-  "short_name": "PWA Example",
+  "name": "pwaexample",
+  "short_name": "pwaexample",
   "start_url": "/?home=true",
   "theme_color": "#fff",
   "background_color": "#333",
