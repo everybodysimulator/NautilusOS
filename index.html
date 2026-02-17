@@ -712,14 +712,12 @@
         })
     </script>
 
-     <script>
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.register (
-          '/github-page-pwa/sw.js',
-          {scope: '/github-page-pwa/'}
-        )
-      }
-  </script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
+
 </body>
 
 
