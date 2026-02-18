@@ -6,11 +6,11 @@ const CACHE_NAME = 'nautilus-cache-' + CACHE_VERSION;
 
 // Files to cache for offline use
 const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/style.css',
-  '/js/main.js'
+  './',
+  './index.html',
+  './manifest.webmanifest',
+  './style.css',
+  './js/main.js'
 ];
 
 // INSTALL EVENT
