@@ -4,7 +4,7 @@
 <head>
 
 <link rel="manifest" href="manifest.webmanifest">
-    <link href="js/main.js"></link>
+
 
 
 
@@ -690,19 +690,19 @@
             </div>
         </div>
     </div>
-    <script src="/js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <script>
         // register sw
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/uv/sw.js")
+                navigator.serviceWorker.register("uv/sw.js")
             })
         }
     </script>
 
     <script>
-        const connection = new BareMux.BareMuxConnection("/baremux/worker.js")
+        const connection = new BareMux.BareMuxConnection("baremux/worker.js")
         const wispUrl = localStorage.getItem("nOS_wispUrl") || "wss://webmath.help/wisp/"
         const bareUrl = localStorage.getItem("nOS_bareUrl") || "https://useclassplay.vercel.app/fq/"
 
