@@ -10,10 +10,17 @@ let config = {
 async function handleRequest(event) {
     if (uv.route(event)) {
         if (config.blocklist.size !== 0) {
-            let decodedUrl = new URL(__uv$config.decodeUrl(new URL(event.request.url).pathname.slice(__uv$config.prefix.length)));
-            if (config.blocklist.has(decodedUrl.hostname)) {
-                return new Response("", { status: 404 });
-            }
+            let decodedUrl;
+
+try {
+    const requestUrl = new URL(event.request.url);
+    const decoded = __uv$config.decodeUrl(
+        requestUrl.pathname.slice(__uv$config.prefix.length)
+    );
+    decodedUrl = new URL(decoded, requestUrl.origin);
+} catch (err) {
+    return new Response("", { status: 400 });
+}
         }
         return await uv.fetch(event);
     }
