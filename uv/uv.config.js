@@ -1,5 +1,5 @@
 (() => {
-    let uvPfx = "/uv/";
+    let uvPfx = "uv/";
     // check if config is loaded in context of service worker or not
     let loc = self.location.pathname.includes(uvPfx)
         ? self.location.pathname.substring(
